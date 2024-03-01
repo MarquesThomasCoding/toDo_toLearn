@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="todos.html">To Dos</a>
+        <a href="tolearns.html">To Learns</a>
+    </nav>
+
+    <h1 class="toLearnTitle"></h1>
+
+    <section>
+        <p>Select skill</p>
+        <ul class="tolearnslist"></ul>
+    </section>
+
+    <section>
+        <p>Time Limit</p>
+        <input type="date" name="inputToLearnTimeLimit">
+    </section>
+
+    <section>
+        <p>Status</p>
+        <select name="inputToLearnStatus">
+            <option value="to start">To start</option>
+            <option value="started">Started</option>
+            <option value="finished">Finished</option>
+        </select>
+    </section>
+
+    <section>
+        <button class="btnValidate">Validate</button>
+    </section>
+
+    <script src="createToLearn.js"></script>
+    <script src="toLearnsList.js"></script>
+</body>
+</html>

@@ -22,7 +22,7 @@ const createToLearn = async (req, res) => {
     const newToLearn = await prisma.toLearn.create({
         data: {
             title,
-            timelimit: new Date(timelimit),
+            timelimit: timelimit ? new Date(timelimit) : null,
             status,
         }
     });
