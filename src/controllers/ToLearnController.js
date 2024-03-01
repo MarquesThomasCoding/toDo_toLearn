@@ -18,12 +18,12 @@ const getToLearn = async (req, res) => {
 };
 
 const createToLearn = async (req, res) => {
-    console.log(req.body); // Vérifiez le contenu de req.body
-
-    const toLearn = req.body;
+    const { title, timelimit, status } = req.body;
     const newToLearn = await prisma.toLearn.create({
         data: {
-            title: toLearn.title,
+            title,
+            timelimit: new Date(timelimit),
+            status,
         }
     });
     res.json(newToLearn);

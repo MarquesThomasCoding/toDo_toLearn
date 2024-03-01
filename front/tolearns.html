@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <ul class="tolearnslist"></ul>
+
+    <input type="text" name="inputToLearnTitle" hidden>
+    <select name="inputToLearnStatus">
+        <option value="to start">To start</option>
+        <option value="started">Started</option>
+        <option value="finished">Finished</option>
+    </select>
+    <input type="date" name="inputToLearnTimeLimit">
+    <button>Submit</button>
+
+    <div class="tolearns"></div>
+
+    <script src="fetchToLearn.js"></script>
+    <script src="createToLearn.js"></script>
+    <script src="toLearnsList.js"></script>
+</body>
+</html>

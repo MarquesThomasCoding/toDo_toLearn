@@ -25,8 +25,8 @@ model ToDo {
 model ToLearn {
   id        Int      @id @default(autoincrement())
   title     String
-  done      Boolean  @default(false)
-  timelimit DateTime
+  status    String   @default("to start")
+  timelimit DateTime?
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
