@@ -26,6 +26,7 @@ model ToLearn {
   id        Int      @id @default(autoincrement())
   title     String
   done      Boolean  @default(false)
+  timelimit DateTime
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
