@@ -9,7 +9,7 @@ deleteBtn.addEventListener('click', () => {
     .then(response => response.json())
     .then(data => {
         console.log(data);
-        window.location.href = '../html/toLearns.html';
+        window.location.href = '../html/tolearns.html';
     })
     .catch(error => {
         console.error('Error:', error);

@@ -12,13 +12,15 @@ fetch(`http://localhost:3000/to-learns/${toLearnID}`)
         const year = date.getFullYear();
         data.timelimit = `${day}/${month}/${year}`;
     }
-    const div = document.createElement('div');
-    div.innerHTML = `
-        <h2 class='toLearnName'>${data.title}</h2>
-        <p class='toLearnTimelimit'>${data.timelimit}</p>
-        <p class='toLearnStatus'>${data.status}</p>
-    `;
-    document.body.appendChild(div);
+
+    const toLearnTitle = document.querySelector('h1.toLearnTitle');
+    const toLearnStatus = document.querySelector('p.toLearnStatus');
+    const toLearnTimeLimit = document.querySelector('p.toLearnTimeLimit');
+
+    toLearnTitle.textContent = data.title;
+    toLearnStatus.textContent = data.status;
+    toLearnTimeLimit.textContent = data.timelimit;
+
 })
 .catch(error => {
     console.error('Error:', error);

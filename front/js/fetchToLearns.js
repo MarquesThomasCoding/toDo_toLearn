@@ -16,7 +16,7 @@ fetch('http://localhost:3000/to-learns')
             <h2 class='toLearnName'>${tolearn.title}</h2>
             <p class='toLearnTimelimit'>${tolearn.timelimit}</p>
             <p class='toLearnStatus'>${tolearn.status}</p>
-            <a href='../html/toLearn.html?id=${tolearn.id}'>Voir</a>
+            <a href='../html/tolearn.html?id=${tolearn.id}'>Voir</a>
         `;
         tolearns.appendChild(div);
     });
