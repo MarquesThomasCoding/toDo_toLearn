@@ -29,4 +29,14 @@ const createToLearn = async (req, res) => {
     res.json(newToLearn);
 };
 
-export { getToLearns, getToLearn, createToLearn }
+const deleteToLearn = async (req, res) => {
+    const { id } = req.params;
+    const toLearn = await prisma.toLearn.delete({
+        where: {
+            id: parseInt(id),
+        },
+    });
+    res.json(toLearn);
+};
+
+export { getToLearns, getToLearn, createToLearn, deleteToLearn }
