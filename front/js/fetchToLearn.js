@@ -15,7 +15,7 @@ fetch(`http://localhost:3000/to-learns/${toLearnID}`)
 
     const toLearnTitle = document.querySelector('h1.toLearnTitle');
     const toLearnStatus = document.querySelector('p.toLearnStatus');
-    const toLearnTimeLimit = document.querySelector('p.toLearnTimeLimit');
+    const toLearnTimeLimit = document.querySelector('p.toLearnTimelimit');
 
     toLearnTitle.textContent = data.title;
     toLearnStatus.textContent = data.status;
