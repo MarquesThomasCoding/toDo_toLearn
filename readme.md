@@ -11,13 +11,13 @@ This project is a work in progress, and I am still working on it. I am using it 
 
 - ✔️ Add a toLearn
 - ✔️ Delete a toLearn
-- ❌ Update a toLearn
+- ✔️ Update a toLearn
 - ✔️ List all toLearns
 - ✔️ Show a toLearn
-- ❌ Add a toDo
+- ✔️ Add a toDo
 - ❌ Delete a toDo
 - ❌ Update a toDo
-- ❌ List all toDos
+- ✔️ List all toDos
 - ❌ Show a toDo
 - ❌ List all toDos with a specific status
 - ❌ List all toLearns with a specific status
@@ -40,6 +40,7 @@ This project is a work in progress, and I am still working on it. I am using it 
 3. Run `npm run dev` to start the server in development mode.
 4. Rename the `.env.example` file to `.env` and fill in the environment variables.
 5. Start your database (Laragon, XAMPP, MAMP, etc.)
-6. Run `npx prisma migrate dev` to create the database tables.
-7. Open the `index.html` file in your browser.
-8. Enjoy!
+6. Run `npx prisma generate` to create the database.
+7. Run `npx prisma migrate dev` to create the database tables.
+8. Open the `index.html` file in your browser.
+9. Enjoy!
