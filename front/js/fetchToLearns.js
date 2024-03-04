@@ -1,24 +1,43 @@
 fetch('http://localhost:3000/to-learns')
 .then(response => response.json())
 .then(data => {
-    const tolearns = document.querySelector('.tolearns');
+    const tolearnsList = document.querySelector('.tolearns__list');
     data.forEach(tolearn => {
-        // Conversion de la timelimit au format 'dd/mm/yyyy'
+        // Conversion de la timelimit au format 'x jours avant la date limite'
         if(tolearn.timelimit) {
             const date = new Date(tolearn.timelimit);
-            const day = date.getDate() < 9 ? `0${date.getDate() + 1}` : date.getDate();
-            const month = date.getMonth() < 9 ? `0${date.getMonth() + 1}` : date.getMonth() + 1;
-            const year = date.getFullYear();
-            tolearn.timelimit = `${day}/${month}/${year}`;
+            const now = new Date();
+            const diff = date - now;
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            tolearn.timelimit = `${days} days left`;
         }
+
+        // Conversion du status en emoji
+        switch(tolearn.status) {
+            case 'to start':
+                tolearn.status = '🔴';
+                break;
+            case 'started':
+                tolearn.status = '🟠';
+                break;
+            case 'finished':
+                tolearn.status = '🟢';
+                break;
+        }
+
         const div = document.createElement('div');
         div.innerHTML = `
-            <h2 class='toLearnName'>${tolearn.title}</h2>
-            <p class='toLearnTimelimit'>${tolearn.timelimit}</p>
-            <p class='toLearnStatus'>${tolearn.status}</p>
-            <a href='../html/tolearn.html?id=${tolearn.id}'>Voir</a>
+            <img class='toLearn__img' src='${tolearn.image}' alt='${tolearn.title}'>
+            <p class='toLearn__status'>${tolearn.status}</p>
         `;
-        tolearns.appendChild(div);
+        if(tolearn.timelimit) {
+            div.innerHTML += `<p class='toLearn__timelimit'>${tolearn.timelimit}</p>`;
+        }
+        div.classList.add('tolearns__list__item');
+        div.addEventListener('click', () => {
+            window.location.href = `../html/tolearn.html?id=${tolearn.id}`;
+        });
+        tolearnsList.appendChild(div);
     });
 })
 .catch(error => {

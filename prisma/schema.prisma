@@ -25,6 +25,7 @@ model ToDo {
 model ToLearn {
   id        Int      @id @default(autoincrement())
   title     String
+  image     String
   status    String   @default("to start")
   timelimit DateTime?
   createdAt DateTime @default(now())

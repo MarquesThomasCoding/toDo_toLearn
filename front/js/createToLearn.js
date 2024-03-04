@@ -1,10 +1,11 @@
-const ToLearnTitle = document.querySelector('h1.toLearnTitle');
-const inputToLearnStatus = document.querySelector('select[name="inputToLearnStatus"]');
-const inputToLearnTimeLimit = document.querySelector('input[name="inputToLearnTimeLimit"]');
-const button = document.querySelector('button.btnValidate');
+const ToLearnTitle = document.querySelector('h1.toLearn__title');
+const inputToLearnStatus = document.querySelector('select[name="toLearn__status__input"]');
+const inputToLearnTimeLimit = document.querySelector('input[name="toLearn__timelimit__input"]');
+const button = document.querySelector('button.btn--validate');
 
 button.addEventListener('click', () => {
     const title = ToLearnTitle.textContent;
+    const image = document.querySelector('li.selected > img').src;
     const status = inputToLearnStatus.value;
     const timelimit = inputToLearnTimeLimit.value;
 
@@ -19,6 +20,7 @@ button.addEventListener('click', () => {
         },
         body: JSON.stringify({
             title,
+            image,
             timelimit,
             status
         })

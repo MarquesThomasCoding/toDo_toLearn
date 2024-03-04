@@ -1,14 +1,6 @@
-ul.tolearnslist {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: start;
-    align-items: center;
-    gap: 10px;
-}
-
-.toLearnTitle {
+.toLearn__title {
     text-transform: uppercase;
-    font-size: 1.5rem;
+    font-size: 2rem;
     background-color: rgba(29, 209, 161, 0.25);
     padding-block: 20vh 20px;
     padding-inline: 120px;
@@ -30,11 +22,118 @@ input, select {
     max-width: 200px;
 }
 
-button.btnValidate {
+.btn--validate {
     padding: 10px;
+    font-size: 1.2rem;
     border: none;
     border-radius: 5px;
     background-color: #1dd1a1;
     color: white;
     cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn--validate:hover {
+    background-color: #10a881;
+}
+
+.btn--delete {
+    padding: 10px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #ddd;
+    color: black;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn--delete:hover {
+    color: white;
+    background-color: #ff4d4d;
+}
+
+.toLearn__timelimit {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 15px;
+    width: fit-content;
+    font-weight: bold;
+    font-size: large;
+}
+
+.toLearn__status {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 15px;
+    width: fit-content;
+    font-size: large;
+    text-transform: capitalize;
+    cursor: pointer;
+}
+
+
+.tolearns__header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.tolearns__header > a {
+    padding: 10px;
+    border-radius: 20px;
+    background-color: #1dd1a1;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.tolearns__header > a:hover {
+    background-color: #10a881;
+}
+
+.tolearns__header > a > img {
+    width: 20px;
+    height: 20px;
+    object-fit: center;
+}
+
+.tolearns__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+    gap: 20px;
+    padding: 20px;
+}
+
+.tolearns__list__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    gap: 10px;
+    padding: 20px;
+    border-radius: 15px;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.tolearns__list__item:hover {
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+}
+
+.tolearns__list__item > .toLearn__status {
+    all: unset;
+}
+
+.tolearns__list__item > .toLearn__timelimit {
+    all: unset;
+    color: #7e7e7e;
+}
+
+.tolearns__list__item > .toLearn__img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
 }

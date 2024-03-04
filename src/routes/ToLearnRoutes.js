@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { getToLearns, getToLearn, createToLearn, deleteToLearn } from '../controllers/ToLearnController.js';
+import { getToLearns, getToLearn, createToLearn, deleteToLearn, updateToLearn } from '../controllers/ToLearnController.js';
 
 const router = Router();
 
@@ -16,6 +16,11 @@ router.post('/', (req, res) => {
 router.get('/:id', (req, res) => {
     getToLearn(req, res);
     console.log("GET /" + req.params.id);
+});
+
+router.put('/:id', (req, res) => {
+    updateToLearn(req, res);
+    console.log("PUT /" + req.params.id);
 });
 
 router.delete('/:id', (req, res) => {

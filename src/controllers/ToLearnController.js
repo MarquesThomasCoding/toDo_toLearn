@@ -17,11 +17,20 @@ const getToLearn = async (req, res) => {
     res.json(toLearn);
 };
 
+const getToLearnTimeLimit = (id) => {
+    return prisma.toLearn.findUnique({
+        where: {
+            id: parseInt(id),
+        },
+    }).id;
+};
+
 const createToLearn = async (req, res) => {
-    const { title, timelimit, status } = req.body;
+    const { title, image, timelimit, status } = req.body;
     const newToLearn = await prisma.toLearn.create({
         data: {
             title,
+            image,
             timelimit: timelimit ? new Date(timelimit) : null,
             status,
         }
@@ -39,4 +48,19 @@ const deleteToLearn = async (req, res) => {
     res.json(toLearn);
 };
 
-export { getToLearns, getToLearn, createToLearn, deleteToLearn }
+const updateToLearn = async (req, res) => {
+    const { id } = req.params;
+    const { status, timelimit } = req.body;
+    const toLearn = await prisma.toLearn.update({
+        where: {
+            id: parseInt(id),
+        },
+        data: {
+            status,
+            timelimit: timelimit ? new Date(timelimit) : getToLearnTimeLimit(id),
+        },
+    });
+    res.json(toLearn);
+};
+
+export { getToLearns, getToLearn, createToLearn, deleteToLearn, updateToLearn }

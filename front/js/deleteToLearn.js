@@ -1,4 +1,4 @@
-const deleteBtn = document.querySelector('.btnDelete');
+const deleteBtn = document.querySelector('.btn--delete');
 
 deleteBtn.addEventListener('click', () => {
     const url = new URL(window.location.href);

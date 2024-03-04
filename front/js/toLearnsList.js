@@ -113,27 +113,23 @@ const toLearns = [
     },
 ]
 
-const toLearnsList = document.querySelector('ul.tolearnslist');
+const skillsList = document.querySelector('ul.skills__list');
 
 toLearns.forEach(toLearn => {
     const li = document.createElement('li');
-    li.style.display = 'flex';
-    li.style.flexDirection = 'column';
-    li.style.alignItems = 'center';
-    li.style.gap = '10px';
-    li.style.cursor = 'pointer';
+    li.classList.add('skills__list__item');
     
     li.innerHTML = `
-        <img src="${toLearn.img}" />
+        <img class="toLearn__img" src="${toLearn.img}" />
         <p>${toLearn.title}</p>
     `;
-    toLearnsList.appendChild(li);
+    skillsList.appendChild(li);
     li.querySelector('img').style.width = '50px';
 
     li.addEventListener('click', () => {
-        let ToLearnTitle = document.querySelector('h1.toLearnTitle');
+        let ToLearnTitle = document.querySelector('h1.toLearn__title');
         ToLearnTitle.textContent = toLearn.title;
-        toLearnsList.querySelectorAll('li').forEach(li => li.style.opacity = 1);
-        li.style.opacity = 0.5;
+        skillsList.querySelectorAll('li').forEach(li => li.classList.remove('selected'));
+        li.classList.add('selected');
     });
 });
