@@ -73,14 +73,14 @@ input, select {
 }
 
 
-.tolearns__header {
+.to__header {
     display: flex;
     align-items: center;
     gap: 20px;
     padding: 20px;
 }
 
-.tolearns__header > a {
+.to__header > a {
     padding: 10px;
     border-radius: 20px;
     background-color: #1dd1a1;
@@ -89,11 +89,11 @@ input, select {
     transition: 0.3s;
 }
 
-.tolearns__header > a:hover {
+.to__header > a:hover {
     background-color: #10a881;
 }
 
-.tolearns__header > a > img {
+.to__header > a > img {
     width: 20px;
     height: 20px;
     object-fit: center;

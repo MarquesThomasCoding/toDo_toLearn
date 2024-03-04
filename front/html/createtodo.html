@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <nav class="navbar">
+        <a class="navbar__link" href="index.html">Home</a>
+        <a class="navbar__link" href="todos.html">To Dos</a>
+        <a class="navbar__link" href="tolearns.html">To Learns</a>
+    </nav>
+
+    <input type="text" class="toDo__title">
+
+    <textarea name="toDo__description" class="toDo__description"></textarea>
+
+    <section>
+        <p>Select skill</p>
+        <ul class="skills__list"></ul>
+    </section>
+
+    <section>
+        <p>Time Limit</p>
+        <input type="date" name="toDo__timelimit__input">
+    </section>
+
+    <section>
+        <p>Status</p>
+        <select name="toDo__status__input">
+            <option value="to start">To start</option>
+            <option value="started">Started</option>
+            <option value="finished">Finished</option>
+        </select>
+    </section>
+
+    <section>
+        <button class="btn--validate">Create toDo</button>
+    </section>
+
+    <script src="../js/createToDo.js"></script>
+</body>
+</html>
