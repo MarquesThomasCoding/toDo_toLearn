@@ -34,3 +34,12 @@ This project is a work in progress, and I am still working on it. I am using it 
 ![](https://skillicons.dev/icons?i=javascript)
 
 ## How to use
+
+1. Clone the repository
+2. Run `npm install` to install the dependencies
+3. Run `npm run dev` to start the server in development mode.
+4. Rename the `.env.example` file to `.env` and fill in the environment variables.
+5. Start your database (Laragon, XAMPP, MAMP, etc.)
+6. Run `npx prisma migrate dev` to create the database tables.
+7. Open the `index.html` file in your browser.
+8. Enjoy!
