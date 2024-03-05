@@ -1,43 +1,43 @@
 fetch('http://localhost:3000/to-dos')
 .then(response => response.json())
 .then(data => {
-    const tolearnsList = document.querySelector('.todos__list');
-    data.forEach(tolearn => {
+    const todosList = document.querySelector('.todos__list');
+    data.forEach(todo => {
         // Conversion de la timelimit au format 'x jours avant la date limite'
-        if(tolearn.timelimit) {
-            const date = new Date(tolearn.timelimit);
+        if(todo.timelimit) {
+            const date = new Date(todo.timelimit);
             const now = new Date();
             const diff = date - now;
             const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-            tolearn.timelimit = `${days} days left`;
+            todo.timelimit = `${days} days left`;
         }
 
         // Conversion du status en emoji
-        switch(tolearn.status) {
+        switch(todo.status) {
             case 'to start':
-                tolearn.status = '🔴';
+                todo.status = '🔴';
                 break;
             case 'started':
-                tolearn.status = '🟠';
+                todo.status = '🟠';
                 break;
             case 'finished':
-                tolearn.status = '🟢';
+                todo.status = '🟢';
                 break;
         }
 
         const div = document.createElement('div');
         div.innerHTML = `
-            <h2 class='toDo__title'>${tolearn.title}</h2>
-            <p class='toDo__status'>${tolearn.status}</p>
+            <h2 class='toDo__title'>${todo.title}</h2>
+            <p class='toDo__status'>${todo.status}</p>
         `;
-        if(tolearn.timelimit) {
-            div.innerHTML += `<p class='toDo__timelimit'>${tolearn.timelimit}</p>`;
+        if(todo.timelimit) {
+            div.innerHTML += `<p class='toDo__timelimit'>${todo.timelimit}</p>`;
         }
         div.classList.add('todos__list__item');
         div.addEventListener('click', () => {
-            window.location.href = `../html/todo.html?id=${tolearn.id}`;
+            window.location.href = `../html/todo.html?id=${todo.id}`;
         });
-        tolearnsList.appendChild(div);
+        todosList.appendChild(div);
     });
 })
 .catch(error => {

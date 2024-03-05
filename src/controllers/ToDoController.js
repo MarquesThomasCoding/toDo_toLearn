@@ -7,6 +7,16 @@ const getToDos = async (req, res) => {
     res.json(toDos)
 }
 
+const getToDo = async (req, res) => {
+    const { id } = req.params
+    const toDo = await prisma.toDo.findUnique({
+        where: {
+            id: parseInt(id)
+        }
+    })
+    res.json(toDo)
+}
+
 const createToDo = async (req, res) => {
     const { title, description, timelimit, status } = req.body;
     const newToDo = await prisma.toDo.create({
@@ -20,4 +30,18 @@ const createToDo = async (req, res) => {
     res.json(newToDo);
 };
 
-export { getToDos, createToDo }
+const updateToDo = async (req, res) => {
+    const { id } = req.params;
+    const { status } = req.body;
+    const updatedToDo = await prisma.toDo.update({
+        where: {
+            id: parseInt(id)
+        },
+        data: {
+            status
+        }
+    });
+    res.json(updatedToDo);
+};
+
+export { getToDos, getToDo, createToDo, updateToDo }
