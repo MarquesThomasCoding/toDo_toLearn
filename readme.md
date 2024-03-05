@@ -16,9 +16,9 @@ This project is a work in progress, and I am still working on it. I am using it 
 - ✔️ Show a toLearn
 - ✔️ Add a toDo
 - ❌ Delete a toDo
-- ❌ Update a toDo
+- ✔️ Update a toDo
 - ✔️ List all toDos
-- ❌ Show a toDo
+- ✔️ Show a toDo
 - ❌ List all toDos with a specific status
 - ❌ List all toLearns with a specific status
 - ❌ List all toDos with a specific time limit
