@@ -23,6 +23,7 @@ This project is a work in progress, and I am still working on it. I am using it 
 - ❌ List all toLearns with a specific status
 - ❌ List all toDos with a specific time limit
 - ❌ List all toLearns with a specific time limit
+- ❌ Search a toDo or a toLearn by name/skill
 
 ## Technologies
 
