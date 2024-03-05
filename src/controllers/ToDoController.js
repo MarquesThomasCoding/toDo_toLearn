@@ -18,11 +18,12 @@ const getToDo = async (req, res) => {
 }
 
 const createToDo = async (req, res) => {
-    const { title, description, timelimit, status } = req.body;
+    const { title, description, skills, timelimit, status } = req.body;
     const newToDo = await prisma.toDo.create({
         data: {
             title,
             description,
+            skills,
             // timelimit,
             status
         }
@@ -44,4 +45,14 @@ const updateToDo = async (req, res) => {
     res.json(updatedToDo);
 };
 
-export { getToDos, getToDo, createToDo, updateToDo }
+const deleteToDo = async (req, res) => {
+    const { id } = req.params;
+    const toDo = await prisma.toDo.delete({
+        where: {
+            id: parseInt(id)
+        }
+    });
+    res.json(toDo);
+};
+
+export { getToDos, getToDo, createToDo, updateToDo, deleteToDo }

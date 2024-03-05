@@ -1,4 +1,4 @@
-const toLearns = [
+const skills = [
     {
         title: "html5",
         img: "https://raw.githubusercontent.com/tandpfun/skill-icons/main/icons/HTML.svg",
@@ -115,21 +115,26 @@ const toLearns = [
 
 const skillsList = document.querySelector('ul.skills__list');
 
-toLearns.forEach(toLearn => {
+skills.forEach(skill => {
     const li = document.createElement('li');
     li.classList.add('skills__list__item');
     
     li.innerHTML = `
-        <img class="toLearn__img" src="${toLearn.img}" />
-        <p>${toLearn.title}</p>
+        <img class="toLearn__img" src="${skill.img}" />
+        <p>${skill.title}</p>
     `;
     skillsList.appendChild(li);
     li.querySelector('img').style.width = '50px';
 
     li.addEventListener('click', () => {
-        let ToLearnTitle = document.querySelector('h1.toLearn__title');
-        ToLearnTitle.textContent = toLearn.title;
-        skillsList.querySelectorAll('li').forEach(li => li.classList.remove('selected'));
-        li.classList.add('selected');
+        if(window.location.href.includes('createtolearn.html')) {
+            let ToLearnTitle = document.querySelector('h1.toLearn__title');
+            ToLearnTitle.textContent = skill.title;
+            skillsList.querySelectorAll('li').forEach(li => li.classList.remove('selected'));
+            li.classList.add('selected');
+        }
+        else {
+            li.classList.toggle('selected');
+        }
     });
 });

@@ -1,5 +1,6 @@
 @import url('reset.css');
-@import url('toLearn.css');
+@import url('tolearn.css');
+@import url('todo.css');
 @import url('navbar.css');
 @import url('skills.css');
 @import url('https://fonts.googleapis.com/css2?family=Inria+Sans:wght@300;400;700&display=swap');
@@ -9,5 +10,7 @@
 }
 
 body {
+    display: flex;
+    flex-direction: column;
     background: linear-gradient(0deg, rgba(200, 214, 229, 0.20) 0%, rgba(200, 214, 229, 0.20) 100%), #FFF;
 }

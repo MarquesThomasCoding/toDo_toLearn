@@ -18,10 +18,10 @@ fetch(`http://localhost:3000/to-dos/${toDoID}`)
             break;
     }
 
-    const toDoTitle = document.querySelector('h1.toDo__title');
+    const toDoTitle = document.querySelector('input.toDo__title__input');
     const toDoStatus = document.querySelector('p.toDo__status');
 
-    toDoTitle.textContent = data.title;
+    toDoTitle.value = data.title;
     toDoStatus.textContent = data.status;
 
 })

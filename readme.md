@@ -15,7 +15,7 @@ This project is a work in progress, and I am still working on it. I am using it 
 - ✔️ List all toLearns
 - ✔️ Show a toLearn
 - ✔️ Add a toDo
-- ❌ Delete a toDo
+- ✔️ Delete a toDo
 - ✔️ Update a toDo
 - ✔️ List all toDos
 - ✔️ Show a toDo

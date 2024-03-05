@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { getToDos, getToDo, createToDo, updateToDo } from '../controllers/ToDoController.js';
+import { getToDos, getToDo, createToDo, updateToDo, deleteToDo } from '../controllers/ToDoController.js';
 
 const router = Router();
 
@@ -21,6 +21,11 @@ router.get('/:id', (req, res) => {
 router.put('/:id', (req, res) => {
     updateToDo(req, res);
     console.log("PUT /" + req.params.id);
+});
+
+router.delete('/:id', (req, res) => {
+    deleteToDo(req, res);
+    console.log("DELETE /" + req.params.id);
 });
 
 export default router;
