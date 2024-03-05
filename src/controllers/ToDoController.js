@@ -33,12 +33,13 @@ const createToDo = async (req, res) => {
 
 const updateToDo = async (req, res) => {
     const { id } = req.params;
-    const { status } = req.body;
+    const { title, status } = req.body;
     const updatedToDo = await prisma.toDo.update({
         where: {
             id: parseInt(id)
         },
         data: {
+            title,
             status
         }
     });

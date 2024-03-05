@@ -20,9 +20,11 @@ fetch(`http://localhost:3000/to-dos/${toDoID}`)
 
     const toDoTitle = document.querySelector('input.toDo__title__input');
     const toDoStatus = document.querySelector('p.toDo__status');
+    const toDoSkills = document.querySelector('.toDo__skills__list');
 
     toDoTitle.value = data.title;
     toDoStatus.textContent = data.status;
+    toDoSkills.textContent = data.skills;
 
 })
 .catch(error => {

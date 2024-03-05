@@ -1,3 +1,4 @@
+const toDoTitle = document.querySelector('.toDo__title__input');
 const toDoStatus = document.querySelector('.toDo__status');
 
 toDoStatus.addEventListener('click', async () => {
@@ -41,6 +42,24 @@ toDoStatus.addEventListener('click', async () => {
         }
         toDoStatus.textContent = data.status;
     })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+});
+
+toDoTitle.addEventListener('change', () => {
+    const url = new URL(window.location.href);
+    const toDoID = url.searchParams.get('id');
+    const title = toDoTitle.value;
+
+    fetch(`http://localhost:3000/to-dos/${toDoID}`, {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({title})
+    })
+    .then(response => response.json())
     .catch(error => {
         console.error('Error:', error);
     });
