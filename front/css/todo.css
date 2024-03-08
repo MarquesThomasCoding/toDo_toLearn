@@ -8,11 +8,9 @@
 
 .toDo__title__input {
     padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    width: 100%;
+    border: none;
     max-width: 200px;
-    font-size: 1.2rem;
+    font-size: 2rem;
 }
 
 .toDo__description {
@@ -88,6 +86,11 @@ input, select {
     font-size: large;
     text-transform: capitalize;
     cursor: pointer;
+}
+
+.status__small {
+    width: fit-content;
+    font-size: small;
 }
 
 
