@@ -28,6 +28,7 @@ fetch('http://localhost:3000/to-learns')
         const div = document.createElement('div');
         div.innerHTML = `
             <img class='toLearn__img' src='${tolearn.image}' alt='${tolearn.title}'>
+            <h3>${tolearn.title}</h3>
             <p class='toLearn__status'>${tolearn.status}</p>
         `;
         if(tolearn.timelimit) {
