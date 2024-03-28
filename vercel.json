@@ -1,15 +1,8 @@
 {
     "version": 2,
-    "builds": [
-      {
-        "src": "./src/index.js",
-        "use": "@now/node"
-      }
-    ],
     "routes": [
-      {
-        "src": "/(.*)",
-        "dest": "index.js"
-      }
+      { "handle": "filesystem" },
+      { "src": "/(.*)", "dest": "$1" },
+      { "src": "/(.*)", "dest": "front/$1" }
     ]
   }
